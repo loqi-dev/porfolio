@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+body, html {
+    margin: 0;
+    font-family: 'Montserrat', 'Arial', sans-serif;
+    height: 100vh;
+}
+
+body {
+    height: 100vh;
+    background: whitesmoke;
+}
+
+
+header {
+    display: flex;
+    z-index: 20;
+    background: none;
+    padding: 1em;
+    justify-content: center;
+    width: calc(100%-2em);
+
+    a {
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+    }
+
+    nav ul {
+        list-style-type: none;
+        display: flex;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    
+    li {
+        padding: 1em;
+    }
+
+}
+
+.contact-modal{
+    display: none;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-color: rgba($color: gray, $alpha: 0.4);
+    left: 0;
+    top: 0;
+    z-index: 1;
+
+    #modal-content {
+        background-color: #f4f4f4;
+        margin: 360px auto;
+        width: 300px;
+        text-align: center;
+        border-radius: 3px;
+        padding: 20px;
+        animation-name: modalOpen;
+        animation-duration: 1.5s;
+        overflow: auto;
+
+        .closeBtn {
+            float: right;
+            font-size: 40px;
+            color: rgb(204, 204, 204);
+            top: 1em;
+            right: 1em;
+        }
+        .closeBtn:hover, .closeBtn:focus {
+            color: #333;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        h3 {
+            font-weight: 300;
+        }
+    }
+
+    @keyframes modalOpen {
+        from{opacity: 0;
+        }
+        to{opacity: 1;
+        }
+    }
+
+    @media (max-width: 400px){
+        #modal-content {
+            width: 70%;
+        }
+    }
+}
+
+.wrapper {
+
+    
+    h1, p, .buttons {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+    }
+     h1{
+        text-transform: uppercase;
+        font-size: 40px;
+        font-weight: 300;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    p {
+        top: 47%;
+        transform: translate(-50%, -50%);
+    }
+    p::after {
+        content: "";
+        border-right: 1.2px solid black;
+        padding: .05em;
+        animation: blink 0.9s infinite ease;
+    }
+
+    @keyframes blink {
+        0%{
+            opacity: 0;
+        }
+        100%{
+            opacity: 1;
+        }
+    }
+
+
+    .buttons {
+        top: 58%;
+        transform: translate(-50%, -50%);
+    
+
+        a, button {
+            display: inline-block;
+            text-decoration: none;
+            align-content: center;
+            color: black;
+            background: white;
+            border: 1px solid black;
+            border-radius: 3px;
+            padding: 0.7em;
+            margin: 0.2em;
+            font-size: .9rem;
+        }
+
+        button {
+            padding: 0.8em;
+        }
+
+        a:hover, button:hover{
+            background: #333;
+            color: white;
+            transition: 0.8s;
+            cursor: pointer;
+        }
+
+    }
+
+    img {
+        height: 4em;
+        width: 4em;
+    }
+    img:hover {
+        transform: scale(1.1);
+        cursor: pointer;
+    }
+    
+}

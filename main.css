@@ -1,0 +1,204 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+body, html {
+  margin: 0;
+  font-family: 'Montserrat', 'Arial', sans-serif;
+  height: 100vh;
+}
+
+body {
+  height: 100vh;
+  background: whitesmoke;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  z-index: 20;
+  background: none;
+  padding: 1em;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: calc(100%-2em);
+}
+
+header a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+header nav ul {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+header li {
+  padding: 1em;
+}
+
+.contact-modal {
+  display: none;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(128, 128, 128, 0.4);
+  left: 0;
+  top: 0;
+  z-index: 1;
+}
+
+.contact-modal #modal-content {
+  background-color: #f4f4f4;
+  margin: 360px auto;
+  width: 300px;
+  text-align: center;
+  border-radius: 3px;
+  padding: 20px;
+  -webkit-animation-name: modalOpen;
+          animation-name: modalOpen;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  overflow: auto;
+}
+
+.contact-modal #modal-content .closeBtn {
+  float: right;
+  font-size: 40px;
+  color: #cccccc;
+  top: 1em;
+  right: 1em;
+}
+
+.contact-modal #modal-content .closeBtn:hover, .contact-modal #modal-content .closeBtn:focus {
+  color: #333;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.contact-modal #modal-content h3 {
+  font-weight: 300;
+}
+
+@-webkit-keyframes modalOpen {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modalOpen {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 400px) {
+  .contact-modal #modal-content {
+    width: 70%;
+  }
+}
+
+.wrapper h1, .wrapper p, .wrapper .buttons {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.wrapper h1 {
+  text-transform: uppercase;
+  font-size: 40px;
+  font-weight: 300;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.wrapper p {
+  top: 47%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.wrapper p::after {
+  content: "";
+  border-right: 1.2px solid black;
+  padding: .05em;
+  -webkit-animation: blink 0.9s infinite ease;
+          animation: blink 0.9s infinite ease;
+}
+
+@-webkit-keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.wrapper .buttons {
+  top: 58%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.wrapper .buttons a, .wrapper .buttons button {
+  display: inline-block;
+  text-decoration: none;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  color: black;
+  background: white;
+  border: 1px solid black;
+  border-radius: 3px;
+  padding: 0.7em;
+  margin: 0.2em;
+  font-size: .9rem;
+}
+
+.wrapper .buttons button {
+  padding: 0.8em;
+}
+
+.wrapper .buttons a:hover, .wrapper .buttons button:hover {
+  background: #333;
+  color: white;
+  -webkit-transition: 0.8s;
+  transition: 0.8s;
+  cursor: pointer;
+}
+
+.wrapper img {
+  height: 4em;
+  width: 4em;
+}
+
+.wrapper img:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  cursor: pointer;
+}
+/*# sourceMappingURL=main.css.map */

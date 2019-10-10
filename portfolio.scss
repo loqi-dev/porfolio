@@ -1,0 +1,125 @@
+body, html {
+    margin: 0;
+    font-family: 'Montserrat', 'Arial';
+}
+
+body {
+    height: 100%;
+}
+
+header {
+    display: flex;
+    z-index: 20;
+    background: white;
+    padding: 1em;
+    justify-content: center;
+    width: calc(100%-2em);
+
+    a {
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+    }
+
+    nav ul {
+        list-style-type: none;
+        display: flex;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    
+    li {
+        padding: 1em;
+    }
+
+}
+h1 {
+    font-weight: 540;
+    text-align: center;
+}
+
+
+div.action {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translate( -50%, -50%);
+
+    button {
+        text-decoration: none;
+        color: black;
+        border: 1px solid black;
+        padding: .5em;
+        border-radius: 3px;
+        display: inline-block;
+        background: white;
+    }
+    button:hover {
+        background: #333;
+        color: white;
+        transition: 0.8s;
+        cursor: pointer;
+    }
+}
+.contact-modal{
+    display: none;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-color: rgba($color: gray, $alpha: 0.4);
+    left: 0;
+    top: 0;
+    z-index: 1;
+
+    #modal-content {
+        background-color: #f4f4f4;
+        margin: 360px auto;
+        width: 300px;
+        text-align: center;
+        border-radius: 3px;
+        padding: 20px;
+        animation-name: modalOpen;
+        animation-duration: 1.5s;
+        overflow: auto;
+
+        .closeBtn {
+            float: right;
+            font-size: 40px;
+            color: rgb(204, 204, 204);
+            top: 1em;
+            right: 1em;
+        }
+        .closeBtn:hover, .closeBtn:focus {
+            color: #333;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        h3 {
+            font-weight: 300;
+        }
+    }
+
+    @keyframes modalOpen {
+        from{opacity: 0;
+        }
+        to{opacity: 1;
+        }
+    }
+
+    @media (max-width: 400px){
+        #modal-content {
+            width: 70%;
+        }
+    }
+}
+img {
+    height: 4em;
+    width: 4em;
+}
+img:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
